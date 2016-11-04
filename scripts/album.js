@@ -29,6 +29,22 @@ var albumPicasso = {
      ]
  };
 
+var albumQueen = {
+    title: 'Greatest Hits',
+    artist: 'Queen',
+    label: 'Queen Label',
+    year: '1978',
+    albumArtURL: 'assets/images/album_covers/02.png',
+    songs: [
+        {title: "We are the Champions", duration:'3:21'},
+        {title: "Bohemian Rhapsody", duration: '4:18'},
+        {title: "Don't Stop Me Now", duration: '3:58'},
+        {title: "We Will Rock You", duration: '4:01'},
+        {title: "Fat Bottomed Girls", duration: "3:02"}
+        
+    ]
+};
+
 
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
@@ -42,14 +58,16 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+ 
+
 var setCurrentAlbum = function(album) {
      
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
+     
      
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -66,5 +84,16 @@ var setCurrentAlbum = function(album) {
  };
  
  window.onload = function() {
+     var albums = [albumPicasso, albumMarconi, albumQueen];
+     var index = 1;
+     
      setCurrentAlbum(albumPicasso);
+     albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(albums[index]);
+        index++; 
+     
+        if(index == albums.length) {
+            index = 0;
+        }
+     });
  };
