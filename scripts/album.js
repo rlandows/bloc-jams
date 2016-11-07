@@ -34,7 +34,7 @@ var albumQueen = {
     artist: 'Queen',
     label: 'Queen Label',
     year: '1978',
-    albumArtURL: 'assets/images/album_covers/02.png',
+    albumArtUrl: 'http://www.thealmightyguru.com/Music/Queen/Albums/Hits2.jpg',
     songs: [
         {title: "We are the Champions", duration:'3:21'},
         {title: "Bohemian Rhapsody", duration: '4:18'},
