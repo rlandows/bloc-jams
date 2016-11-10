@@ -13,13 +13,14 @@ var buildCollectionItemTemplate = function() {
    + '    </p>'
    + '  </div>'
    + '</div>'
+    ;
     
     return $(template);
 };
     
-$(window.load).(function() {
+$(window).load(function() {
      // #1
-     var collectionContainer = $('.album-covers');
+     var $collectionContainer = $('.album-covers');
      // #2
      $collectionContainer.empty();
  

@@ -48,25 +48,25 @@ var albumQueen = {
 
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
-        '<tr class="album-view-song-item">'
-      + ' <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
-      + '  <td class="song-item-title">' + songName + '</td>'
-      + '  <td class="song-item-duration">' + songLength + '</td>'
-      + '</tr>'
-      ;
- 
+       '<tr class="album-view-song-item">'
+     + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
+     + '  <td class="song-item-title">' + songName + '</td>'
+     + '  <td class="song-item-duration">' + songLength + '</td>'
+     + '</tr>'
+     ;
+
+     
      return $(template);
  };
-
 
  
 
 var setCurrentAlbum = function(album) {
-    var $albumTitle = $('album-view-title')
-    var $albumArtist = $('album-view-artist');
-    var $albumReleaseInfo = $('album-view-release-info');
-    var $albumImage = $('album-cover-art');
-    var $albumSongList = $('album-view-song-list');
+    var $albumTitle = $('.album-view-title');
+     var $albumArtist = $('.album-view-artist');
+     var $albumReleaseInfo = $('.album-view-release-info');
+     var $albumImage = $('.album-cover-art');
+     var $albumSongList = $('.album-view-song-list');
      
      
      $albumTitle.text(album.title);
@@ -169,12 +169,12 @@ window.onload = function() {
         
     }
      
-     albumImage.addEventListener("click", function(event) {
+/*     albumImage.addEventListener("click", function(event) {
         setCurrentAlbum(albums[index]);
         index++; 
      
         if(index == albums.length) {
             index = 0;
         }
-     });
- };
+     }); */
+ }; 
