@@ -62,16 +62,28 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumber = $(this).attr('data-song-number');
 
 	if (currentlyPlayingSong !== null) {
+<<<<<<< HEAD
 		// Revert to song number for currently playing song because user started playing new song.
+=======
+		
+>>>>>>> checkpoint-18
 		var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
 		currentlyPlayingCell.html(currentlyPlayingSong);
 	}
 	if (currentlyPlayingSong !== songNumber) {
+<<<<<<< HEAD
 		// Switch from Play -> Pause button to indicate new song is playing.
 		$(this).html(pauseButtonTemplate);
 		currentlyPlayingSong = songNumber;
 	} else if (currentlyPlayingSong === songNumber) {
 		// Switch from Pause -> Play button to pause currently playing song.
+=======
+		
+		$(this).html(pauseButtonTemplate);
+		currentlyPlayingSong = songNumber;
+	} else if (currentlyPlayingSong === songNumber) {
+		
+>>>>>>> checkpoint-18
 		$(this).html(playButtonTemplate);
 		currentlyPlayingSong = null;
 	}
@@ -138,11 +150,13 @@ var pauseButtonTemplate = '<a class = "album-song-button"><span class="ion-pause
 var currentlyPlayingSong = null;
 
 $(document).ready(function() {
-     
-     
+
      setCurrentAlbum(albumPicasso);
+    
+   
      
      
+
     
     
  });     
