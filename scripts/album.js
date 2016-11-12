@@ -62,16 +62,25 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumber = $(this).attr('data-song-number');
 
 	if (currentlyPlayingSong !== null) {
+
 		
+
 		var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
 		currentlyPlayingCell.html(currentlyPlayingSong);
 	}
 	if (currentlyPlayingSong !== songNumber) {
+
+		
+		$(this).html(pauseButtonTemplate);
+		currentlyPlayingSong = songNumber;
+	} else if (currentlyPlayingSong === songNumber) {
+
 		
 		$(this).html(pauseButtonTemplate);
 		currentlyPlayingSong = songNumber;
 	} else if (currentlyPlayingSong === songNumber) {
 		
+
 		$(this).html(playButtonTemplate);
 		currentlyPlayingSong = null;
 	}
@@ -138,13 +147,13 @@ var pauseButtonTemplate = '<a class = "album-song-button"><span class="ion-pause
 var currentlyPlayingSong = null;
 
 $(document).ready(function() {
-     
-     
+
      setCurrentAlbum(albumPicasso);
     
    
      
      
+
     
     
  });     
@@ -156,4 +165,3 @@ $(document).ready(function() {
             index = 0;
         }
      }); */
- 
